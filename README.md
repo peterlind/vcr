@@ -11,9 +11,9 @@ require 'rubygems'
 require 'test/unit'
 require 'vcr'
 
-VCR.configure do |c|
+VCR.config do |c|
   c.cassette_library_dir = 'fixtures/vcr_cassettes'
-  c.hook_into :webmock # or :fakeweb
+  c.stub_with :webmock # or :fakeweb
 end
 
 class VCRTest < Test::Unit::TestCase
